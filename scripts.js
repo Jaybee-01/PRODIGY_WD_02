@@ -1,5 +1,5 @@
 let [minutes, seconds, milliseconds] = [0, 0, 0];
-let timerRef = document.getElementById("display");
+let timer = document.getElementById("display");
 let interval = null;
 let isRunning = false;
 
@@ -7,9 +7,10 @@ function updateDisplay() {
   let m = minutes < 10 ? `0${minutes}` : minutes;
   let s = seconds < 10 ? `0${seconds}` : seconds;
   let ms = milliseconds < 10 ? `0${milliseconds}` : milliseconds;
-  timerRef.innerHTML = `${m}:${s}:${ms}`;
+  timer.innerHTML = `${m}:${s}:${ms}`;
 }
 
+// function to start
 function start() {
   if (!isRunning) {
     interval = setInterval(run, 10);
